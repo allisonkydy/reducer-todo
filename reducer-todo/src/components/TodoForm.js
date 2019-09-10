@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 
 function TodoForm({ addTodo, removeTodos }) {
-  const [newTodo, setNewTodo] = useState("");
+  const [newTodo, setNewTodo] = useState({ item: "", date: "" });
 
   const handleInputChange = e => {
-    setNewTodo(e.target.value);
+    setNewTodo({ ...newTodo, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    addTodo(newTodo);
-    setNewTodo("");
+    if (newTodo.item === "") {
+      return;
+    } else {
+      addTodo(newTodo);
+      setNewTodo({ item: "", date: "" });
+    }
   };
 
   const handleClear = e => {
@@ -23,8 +27,15 @@ function TodoForm({ addTodo, removeTodos }) {
       <input
         type="text"
         placeholder="enter a todo..."
-        value={newTodo}
-        name="newTodo"
+        value={newTodo.item}
+        name="item"
+        onChange={handleInputChange}
+      />
+      <input 
+        type="text"
+        placeholder="when is it due? (mm/dd/yy)"
+        value={newTodo.date}
+        name="date"
         onChange={handleInputChange}
       />
       <button type="submit">add</button>

@@ -3,17 +3,20 @@ export const initialState = {
     {
       item: "Learn about reducers",
       completed: false,
-      id: 3892987586
+      id: 3892987586,
+      dueDate: ""
     },
     {
       item: "Eat grass",
       completed: false,
-      id: 3892987587
+      id: 3892987587,
+      dueDate: ""
     },
     {
       item: "Feed worms",
       completed: false,
-      id: 3892987589
+      id: 3892987589,
+      dueDate: "09/11/19"
     }
   ]
 };
@@ -25,7 +28,12 @@ export const todoReducer = (state, action) => {
         ...state,
         todos: [
           ...state.todos,
-          { item: action.payload, completed: false, id: Date.now() }
+          {
+            item: action.payload.item,
+            completed: false,
+            id: Date.now(),
+            dueDate: action.payload.date
+          }
         ]
       };
     case "TOGGLE_COMPLETE":
