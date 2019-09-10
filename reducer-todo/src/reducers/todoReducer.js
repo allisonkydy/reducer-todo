@@ -39,7 +39,7 @@ export const todoReducer = (state, action) => {
           }
         })
       };
-    case "REMOVE_TODO":
+    case "REMOVE_TODOS":
       return {
         ...state,
         todos: [...state.todos].filter(todo => todo.completed === false)

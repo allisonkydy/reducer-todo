@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function Todo({ todo, toggleComplete }) {
   return (
@@ -8,7 +8,7 @@ function Todo({ todo, toggleComplete }) {
     >
       {todo.item}
     </div>
-  )
+  );
 }
 
 export default Todo;
