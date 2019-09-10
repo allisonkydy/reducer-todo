@@ -9,6 +9,10 @@ import TodoList from './components/TodoList';
 function App() {
   const [state, dispatch] = useReducer(todoReducer, initialState);
 
+  const addTodo = (newTodo) => {
+    dispatch({ type: 'ADD_TODO', payload: newTodo });
+  }
+
   const toggleComplete = () => {
     return;
   }
@@ -16,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <h1>a new and fancy todo app</h1>
-      <TodoForm />
+      <TodoForm addTodo={addTodo} />
       <TodoList todos={state.todos} toggleComplete={toggleComplete} />
     </div>
   );

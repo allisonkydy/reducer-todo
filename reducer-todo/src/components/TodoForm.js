@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function TodoForm() {
+function TodoForm({ addTodo }) {
   const [newTodo, setNewTodo] = useState("");
 
   const handleInputChange = (e) => {
@@ -9,7 +9,7 @@ function TodoForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // call dispatch fn
+    addTodo(newTodo);
     setNewTodo("");
   }
 
