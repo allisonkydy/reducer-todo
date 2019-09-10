@@ -13,8 +13,8 @@ function App() {
     dispatch({ type: 'ADD_TODO', payload: newTodo });
   }
 
-  const toggleComplete = () => {
-    return;
+  const toggleComplete = (id) => {
+    dispatch({ type: 'TOGGLE_COMPLETE', payload: id });
   }
 
   return (
