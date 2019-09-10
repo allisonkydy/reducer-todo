@@ -2,7 +2,6 @@ import React from "react";
 import moment from "moment";
 
 function Todo({ todo, toggleComplete }) {
-  // console.log(moment(todo.dueDate, "MM-DD-YY").diff());
   return (
     <div
       onClick={() => toggleComplete(todo.id)}

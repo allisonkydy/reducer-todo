@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>a new and fancy todo app</h1>
+      <h1>a cool and nice todo app</h1>
       <div className="todo-container">
         <TodoForm addTodo={addTodo} removeTodos={removeTodos} />
         <TodoList todos={state.todos} toggleComplete={toggleComplete} />
