@@ -22,7 +22,7 @@ export const todoReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TODO":
       return {
-        ...state, 
+        ...state,
         todos: [
           ...state.todos,
           { item: action.payload, completed: false, id: Date.now() }
@@ -32,13 +32,18 @@ export const todoReducer = (state, action) => {
       return {
         ...state,
         todos: [...state.todos].map(todo => {
-            if (todo.id === action.payload) {
-              return { ...todo, completed: !todo.completed}
-            } else {
-              return todo;
-            }
+          if (todo.id === action.payload) {
+            return { ...todo, completed: !todo.completed };
+          } else {
+            return todo;
+          }
         })
-      }
+      };
+    case "REMOVE_TODO":
+      return {
+        ...state,
+        todos: [...state.todos].filter(todo => todo.completed === false)
+      };
     default:
       return state;
   }

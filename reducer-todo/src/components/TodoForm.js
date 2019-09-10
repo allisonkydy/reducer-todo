@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function TodoForm({ addTodo }) {
+function TodoForm({ addTodo, removeTodos }) {
   const [newTodo, setNewTodo] = useState("");
 
   const handleInputChange = (e) => {
@@ -15,7 +15,7 @@ function TodoForm({ addTodo }) {
 
   const handleClear = (e) => {
     e.preventDefault();
-    // call remove fn
+    removeTodos();
   }
 
   return (

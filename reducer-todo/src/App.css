@@ -3,9 +3,9 @@
 }
 
 .complete {
-  text-decoration: none;
+  text-decoration: line-through;
 }
 
 .incomplete {
-  text-decoration: line-through;
+  text-decoration: none;
 }

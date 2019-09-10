@@ -17,10 +17,14 @@ function App() {
     dispatch({ type: 'TOGGLE_COMPLETE', payload: id });
   }
 
+  const removeTodos = () => {
+    dispatch({ type: 'REMOVE_TODO' });
+  }
+
   return (
     <div className="App">
       <h1>a new and fancy todo app</h1>
-      <TodoForm addTodo={addTodo} />
+      <TodoForm addTodo={addTodo} removeTodos={removeTodos} />
       <TodoList todos={state.todos} toggleComplete={toggleComplete} />
     </div>
   );
