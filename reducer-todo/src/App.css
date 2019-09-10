@@ -88,3 +88,9 @@ button:active {
   font-size: 13px;
   color: #474747;
 }
+
+.todo-date span {
+  padding-left: 10px;
+  color: #d42e2e;
+  font-weight: bold;
+}

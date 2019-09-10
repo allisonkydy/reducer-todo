@@ -10,7 +10,7 @@ export const initialState = {
       item: "Eat grass",
       completed: false,
       id: 3892987587,
-      dueDate: ""
+      dueDate: "09/09/19"
     },
     {
       item: "Feed worms",

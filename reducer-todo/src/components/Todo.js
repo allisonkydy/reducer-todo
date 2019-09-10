@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 
 function Todo({ todo, toggleComplete }) {
+  // console.log(moment(todo.dueDate, "MM-DD-YY").diff());
   return (
     <div
       onClick={() => toggleComplete(todo.id)}
@@ -16,6 +17,7 @@ function Todo({ todo, toggleComplete }) {
       {!todo.completed && todo.dueDate && (
         <div className="todo-date">
           Due {moment(todo.dueDate, "MM-DD-YY").fromNow()}
+          {moment(todo.dueDate, "MM-DD-YY").diff() < 0 && <span>OVERDUE</span>}
         </div>
       )}
     </div>
