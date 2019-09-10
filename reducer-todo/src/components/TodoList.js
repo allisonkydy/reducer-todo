@@ -4,12 +4,16 @@ import Todo from "./Todo";
 
 function TodoList({ todos, toggleComplete }) {
   return (
-    <div>
-      {todos.map(todo => {
-        return (
-          <Todo key={todo.id} todo={todo} toggleComplete={toggleComplete} />
-        );
-      })}
+    <div className="todo-list">
+      <ul>
+        {todos.map(todo => {
+          return (
+            <li>
+              <Todo key={todo.id} todo={todo} toggleComplete={toggleComplete} />
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
